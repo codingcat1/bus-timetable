@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  database: bus_timetable_development
+
+test:
+  adapter: postgresql
+  database: bus_timetable_test
+
