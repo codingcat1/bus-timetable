@@ -13,7 +13,11 @@ class StationsController < ApplicationController
 
   def create
     @station = Station.create(station_params)
-    redirect_to stations_path
+    if @station.save
+      redirect_to stations_path
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -22,9 +26,19 @@ class StationsController < ApplicationController
 
   def update
     @station = Station.find(params[:id])
-    @station.update(station_params)
-    flash[:notice] = "Your Station has been updated!"
-    redirect_to station_path(@station)
+    if @station.update(station_params)
+      flash[:notice] = "Your Station has been updated!"
+      redirect_to station_path(@station)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @station = Station.find(params[:id])
+    @station.delete
+    flash[:notice] = "#{@station.name} has been deleted!"
+    redirect_to stations_path
   end
 
   private

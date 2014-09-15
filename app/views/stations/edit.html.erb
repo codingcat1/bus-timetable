@@ -1,11 +1,5 @@
 <h1>Edit <%= @station.name %></h1>
 
-<%= form_for(@station) do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <%= f.submit(:class => "btn btn-primary") %>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to "Return to Station Index", stations_path %>
