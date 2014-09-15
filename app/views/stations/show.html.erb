@@ -1,0 +1,9 @@
+<h1> <%= @station.name %> </h1>
+
+<p><%= link_to "Edit Station", edit_station_path(@station), :class => "btn btn-primary" %></p>
+<p><%= link_to "Delete Station", station_path(@station),
+  :data => {:confirm => "You sure?",
+            :method => "delete"},
+  :class => "btn btn-danger" %></p>
+
+<%= link_to "Return to Station Index", stations_path %>

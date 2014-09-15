@@ -3,7 +3,7 @@
 <h3>Stations</h3>
 <div class="list-group">
   <% @stations.each do |station| %>
-    <li class="list-group-item"><%= station.name %></li>
+    <%= link_to station.name, station_path(station), :class => "list-group-item"%>
   <% end %>
 </div>
 
