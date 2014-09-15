@@ -1,0 +1,8 @@
+<h1>Create a new Station</h1>
+<%= form_for(@station) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>

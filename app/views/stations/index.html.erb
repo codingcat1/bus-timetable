@@ -1,8 +1,10 @@
 <h1>Train information</h1>
 
 <h3>Stations</h3>
-<ul>
+<div class="list-group">
   <% @stations.each do |station| %>
-    <li><%= station.name %></li>
+    <li class="list-group-item"><%= station.name %></li>
   <% end %>
-</ul>
+</div>
+
+<%= link_to "New Station", new_station_path, :class => "btn btn-primary" %>
